@@ -1,0 +1,30 @@
+2026-02-10 03:00:06,664 - GmailWatcherRunner - INFO - === WEBXES Tech Gmail Watcher Starting ===
+2026-02-10 03:00:06,706 - GmailWatcherRunner - INFO - Vault: F:\AI_Employee_Vault
+2026-02-10 03:00:06,707 - GmailWatcherRunner - INFO - DRY_RUN: true
+2026-02-10 03:00:06,708 - GmailWatcherRunner - INFO - No token found. Opening browser for Google sign-in...
+2026-02-10 03:02:59,455 - google_auth_oauthlib.flow - INFO - "GET /?state=AzhOJJTagzfPJBmC9LTj0w94Ob0JRV&code=4/0ASc3gC39bd985ZxMItDqj6WrAxC4PL8Y3MW84dkAdFGoB1iUuiI5gSRWX4jfsYkBAY9NAg&scope=https://www.googleapis.com/auth/gmail.readonly HTTP/1.1" 200 65
+2026-02-10 03:03:01,371 - GmailWatcherRunner - INFO - Token saved to C:\Users\lenovo\.config\webxes\token.json
+2026-02-10 03:03:01,397 - GmailWatcherRunner - INFO - Authentication successful.
+2026-02-10 03:03:01,939 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2026-02-10 03:03:02,114 - GmailWatcherRunner - INFO - Gmail Watcher is now running. Polling every 120 seconds.
+2026-02-10 03:03:02,115 - GmailWatcherRunner - INFO - Press Ctrl+C to stop.
+2026-02-10 03:03:02,115 - GmailWatcher - INFO - Starting GmailWatcher
+2026-02-10 03:03:04,540 - GmailWatcher - ERROR - Error: 'charmap' codec can't encode character '\u034f' in position 202: character maps to <undefined>
+2026-02-10 03:04:54,827 - GmailWatcherRunner - INFO - === WEBXES Tech Gmail Watcher Starting ===
+2026-02-10 03:04:54,828 - GmailWatcherRunner - INFO - Vault: F:\AI_Employee_Vault
+2026-02-10 03:04:54,828 - GmailWatcherRunner - INFO - DRY_RUN: true
+2026-02-10 03:04:54,834 - GmailWatcherRunner - INFO - Authentication successful.
+2026-02-10 03:04:54,842 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2026-02-10 03:04:54,845 - GmailWatcherRunner - INFO - Gmail Watcher is now running. Polling every 120 seconds.
+2026-02-10 03:04:54,845 - GmailWatcherRunner - INFO - Press Ctrl+C to stop.
+2026-02-10 03:04:54,845 - GmailWatcher - INFO - Starting GmailWatcher
+2026-02-13 16:16:52,094 - GmailWatcherRunner - INFO - === WEBXES Tech Gmail Watcher Starting ===
+2026-02-13 16:16:52,119 - GmailWatcherRunner - INFO - Vault: F:\AI_Employee_Vault
+2026-02-13 16:16:52,120 - GmailWatcherRunner - INFO - DRY_RUN: true
+2026-02-13 16:16:52,396 - GmailWatcherRunner - INFO - Token expired, refreshing...
+2026-02-13 16:16:54,044 - GmailWatcherRunner - INFO - Token saved to C:\Users\lenovo\.config\webxes\token.json
+2026-02-13 16:16:54,044 - GmailWatcherRunner - INFO - Authentication successful.
+2026-02-13 16:16:54,135 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2026-02-13 16:16:54,235 - GmailWatcherRunner - INFO - Gmail Watcher is now running. Polling every 120 seconds.
+2026-02-13 16:16:54,235 - GmailWatcherRunner - INFO - Press Ctrl+C to stop.
+2026-02-13 16:16:54,236 - GmailWatcher - INFO - Starting GmailWatcher

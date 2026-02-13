@@ -1,0 +1,15 @@
+2026-02-13 16:40:58,996 - ApprovalWatcher - INFO - === WEBXES Tech Approval Watcher Starting ===
+2026-02-13 16:40:58,997 - ApprovalWatcher - INFO - Vault: F:\AI_Employee_Vault
+2026-02-13 16:40:58,997 - ApprovalWatcher - INFO - DRY_RUN: True
+2026-02-13 16:40:58,999 - ApprovalWatcher - INFO - Approval Watcher is running. Polling every 30 seconds. Ctrl+C to stop.
+2026-02-13 16:41:29,005 - ApprovalWatcher - INFO - Processing approved: PAYMENT_Acme_Corp_2026-02-13.md
+2026-02-13 16:41:29,010 - ApprovalWatcher - INFO - [DRY_RUN] Would execute payment from PAYMENT_Acme_Corp_2026-02-13.md
+[2026-02-13T16:41:29.130777] APPROVED: PAYMENT_Acme_Corp_2026-02-13.md (type=payment)
+2026-02-13 17:25:16,841 - ApprovalWatcher - INFO - === WEBXES Tech Approval Watcher Starting ===
+2026-02-13 17:25:16,842 - ApprovalWatcher - INFO - Vault: F:\AI_Employee_Vault
+2026-02-13 17:25:16,842 - ApprovalWatcher - INFO - DRY_RUN: False
+2026-02-13 17:25:16,844 - ApprovalWatcher - INFO - Approval Watcher is running. Polling every 30 seconds. Ctrl+C to stop.
+2026-02-13 17:25:16,846 - ApprovalWatcher - INFO - Processing approved: EMAIL_Sarah_XYZ_Corp_2026-02-13.md
+2026-02-13 17:25:16,847 - ApprovalWatcher - INFO - Email action approved: EMAIL_Sarah_XYZ_Corp_2026-02-13.md. Claude should send via Gmail MCP on next processing cycle.
+2026-02-13 17:25:16,848 - ApprovalWatcher - INFO - Moved EMAIL_Sarah_XYZ_Corp_2026-02-13.md -> Done/
+[2026-02-13T17:25:16.848308] APPROVED: EMAIL_Sarah_XYZ_Corp_2026-02-13.md (type=email)

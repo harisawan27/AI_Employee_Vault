@@ -1,0 +1,35 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(echo:*)",
+      "Bash(pip install:*)",
+      "Bash(python -c:*)",
+      "Bash(pip --version:*)",
+      "Bash(python -m pip install:*)",
+      "Bash(python run_gmail_watcher.py:*)",
+      "Bash(node:*)",
+      "Bash(npm:*)",
+      "WebFetch(domain:www.npmjs.com)",
+      "Bash(npx @gongrzhe/server-gmail-autoauth-mcp auth:*)",
+      "Bash(npx:*)",
+      "Bash(printf:*)",
+      "WebSearch",
+      "WebFetch(domain:docs.claude.com)",
+      "Bash(python:*)",
+      "Bash(move:*)",
+      "Bash(docker --version:*)",
+      "Bash(docker-compose:*)",
+      "Bash(docker info:*)",
+      "Bash(cmd.exe /c \"start \"\"\"\" \"\"C:\\\\Program Files\\\\Docker\\\\Docker\\\\Docker Desktop.exe\"\"\")",
+      "Bash(docker compose:*)",
+      "Bash(docker ps:*)",
+      "Bash(docker restart:*)",
+      "Bash(dir /b \"F:\\\\AI_Employee_Vault\\\\Pending_Approval\")",
+      "Bash(dir /b \"F:\\\\AI_Employee_Vault\\\\Approved\")",
+      "Bash(dir /b \"F:\\\\AI_Employee_Vault\\\\Rejected\")",
+      "Bash(dir /b \"F:\\\\AI_Employee_Vault\\\\.claude\\\\skills\")",
+      "Bash(dir:*)",
+      "Bash(find:*)"
+    ]
+  }
+}
