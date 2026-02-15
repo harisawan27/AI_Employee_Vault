@@ -9,12 +9,12 @@ Usage:
 """
 
 import json
-import os
 from datetime import datetime
 from pathlib import Path
 
-VAULT_PATH = Path(os.getenv("VAULT_PATH", r"F:\AI_Employee_Vault"))
-AUDIT_FILE = VAULT_PATH / "Logs" / "audit.jsonl"
+from config import LOGS
+
+AUDIT_FILE = LOGS / "audit.jsonl"
 
 
 def audit_log(category: str, action: str, details: dict = None,

@@ -1,6 +1,49 @@
 # WEBXES Tech AI Employee — Architecture
 
-## System Diagram
+## Dual-Zone Cloud Architecture (Platinum)
+
+```
+CLOUD VM (Oracle Cloud Free Tier - 24/7)          LOCAL WINDOWS (on-demand)
+┌──────────────────────────────────────┐    ┌──────────────────────────────────┐
+│  gmail_watcher.py (systemd)          │    │  Claude Code (AI reasoning)      │
+│  orchestrator.py  (systemd)          │    │  approval_watcher.py (sends)     │
+│  cloud_agent.py   (systemd)          │    │  local_sync.py (git pull)        │
+│  git_sync_cloud.py (systemd)         │    │  Social media posters            │
+│  health_monitor.py (systemd)         │    │  (LinkedIn/FB/IG/Twitter)        │
+│  Odoo Docker (Nginx + HTTPS)         │    │  start_local_ai.bat              │
+│                                      │    │                                  │
+│  Creates: template drafts            │    │  Refines: AI-powered responses   │
+│  Zone: In_Progress/cloud/            │    │  Zone: In_Progress/local/        │
+│  Output: Updates/ + Signals/         │    │  Executes: email send, social    │
+└──────────────┬───────────────────────┘    └───────────────┬──────────────────┘
+               │                                            │
+               │          ┌─────────────────┐               │
+               └──────────┤   GitHub Repo   ├───────────────┘
+                          │   (vault sync)  │
+                          └─────────────────┘
+                          Cloud pushes every 5 min
+                          Local pulls on startup
+```
+
+### Sync Protocol
+1. Cloud: `git pull --rebase && git add . && git commit && git push` (every 5 min)
+2. Local: `git pull --rebase` on startup + `local_sync.py` processes Updates/
+3. Conflict resolution: rebase preferred, falls back to merge
+4. Only markdown/state files sync — secrets never leave their zone
+
+### Claim-by-Move Rule
+- Cloud agent moves email from `Needs_Action/` → `In_Progress/cloud/` to claim it
+- Local agent would move to `In_Progress/local/` — prevents double-work
+- After processing, files move to `Done/`
+
+### Security Boundaries
+- Cloud: No browser sessions, no social media cookies, DRY_RUN=true always
+- Local: Has credentials, can send emails, post to social media
+- Secrets: `.env` never committed, credentials outside vault
+
+---
+
+## System Diagram (Full)
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
@@ -68,6 +111,16 @@
 
 ## Components
 
+### Cloud Services (Platinum)
+
+| Component | File | Purpose |
+|-----------|------|---------|
+| Cloud Agent | `cloud_agent.py` | Polls Needs_Action/, claims emails, creates template drafts in Updates/ |
+| Git Sync | `cloud_setup/git_sync_cloud.py` | Auto git pull/commit/push every 5 min |
+| Health Monitor | `cloud_setup/health_monitor.py` | Checks systemd + Docker every 5 min, alerts via Signals/ |
+| Local Sync | `local_sync.py` | Pulls from GitHub, processes Updates/ and Signals/ |
+| Config | `config.py` | Central config: IS_CLOUD/IS_LOCAL detection, all paths |
+
 ### Watchers (Perception)
 
 | Component | File | Trigger | Output |
@@ -101,6 +154,19 @@ The **Ralph Wiggum Loop** (`.claude/hooks/ralph_wiggum.py`) enables autonomous i
 | Dashboard | `Dashboard.md` | Real-time vault status (updated by `/update-dashboard` skill) |
 
 ## Data Flows
+
+### Cloud Email Flow (Platinum)
+```
+Gmail → Gmail Watcher (cloud) → Needs_Action/EMAIL_*.md
+  → Cloud Agent claims: move to In_Progress/cloud/
+  → Template draft created: Updates/EMAIL_DRAFT_*.md
+  → Signal created: Signals/new_draft_*.json
+  → Git sync pushes to GitHub
+  → Local sync pulls + moves draft to Needs_Action/
+  → Claude Code refines draft
+  → CEO approves → Approved/email/
+  → Approval Watcher sends via Gmail MCP → Done/
+```
 
 ### Email Flow
 ```

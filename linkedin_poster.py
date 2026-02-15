@@ -1,18 +1,13 @@
 # linkedin_poster.py - LinkedIn Auto-Poster using Playwright
-import os
 import json
 import logging
 from pathlib import Path
 from datetime import datetime
-from dotenv import load_dotenv
+from config import VAULT_PATH, LINKEDIN_SESSION_PATH, DRY_RUN
 
-load_dotenv()
 logger = logging.getLogger('LinkedInPoster')
 
-VAULT_PATH = Path(os.getenv('VAULT_PATH', r'F:\AI_Employee_Vault'))
-SESSION_PATH = Path(os.getenv('LINKEDIN_SESSION_PATH',
-                               r'C:\Users\lenovo\.config\webxes\linkedin_session'))
-DRY_RUN = os.getenv('DRY_RUN', 'true').lower() == 'true'
+SESSION_PATH = Path(LINKEDIN_SESSION_PATH) if LINKEDIN_SESSION_PATH else Path.home() / '.config' / 'webxes' / 'linkedin_session'
 
 
 class LinkedInPoster:

@@ -1,14 +1,9 @@
 # run_filesystem_watcher.py - Entry point for the File System Watcher
-import os
 import sys
 import logging
 from pathlib import Path
-from dotenv import load_dotenv
 from filesystem_watcher import FileSystemWatcher
-
-load_dotenv()
-
-VAULT_PATH = os.getenv('VAULT_PATH', r'F:\AI_Employee_Vault')
+from config import VAULT_PATH
 
 # Setup logging
 logging.basicConfig(
@@ -16,7 +11,7 @@ logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
     handlers=[
         logging.StreamHandler(sys.stdout),
-        logging.FileHandler(Path(VAULT_PATH) / 'Logs' / 'filesystem_watcher.log')
+        logging.FileHandler(VAULT_PATH / 'Logs' / 'filesystem_watcher.log')
     ]
 )
 logger = logging.getLogger('FileSystemWatcherRunner')
@@ -29,9 +24,9 @@ def main():
 
     # Ensure folders exist
     for folder in ['Inbox', 'Needs_Action']:
-        (Path(VAULT_PATH) / folder).mkdir(exist_ok=True)
+        (VAULT_PATH / folder).mkdir(exist_ok=True)
 
-    watcher = FileSystemWatcher(vault_path=VAULT_PATH)
+    watcher = FileSystemWatcher(vault_path=str(VAULT_PATH))
     logger.info('File System Watcher is now running. Press Ctrl+C to stop.')
 
     try:

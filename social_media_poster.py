@@ -15,15 +15,9 @@ from abc import ABC, abstractmethod
 from datetime import datetime
 from pathlib import Path
 
-from dotenv import load_dotenv
-
 from audit_logger import audit_log
 from retry_handler import retry
-
-load_dotenv()
-
-VAULT_PATH = Path(os.getenv("VAULT_PATH", r"F:\AI_Employee_Vault"))
-DRY_RUN = os.getenv("DRY_RUN", "true").lower() == "true"
+from config import VAULT_PATH, DRY_RUN, FACEBOOK_SESSION_PATH, INSTAGRAM_SESSION_PATH, TWITTER_SESSION_PATH
 
 logger = logging.getLogger("SocialMediaPoster")
 
@@ -134,9 +128,7 @@ class FacebookPoster(BaseSocialPoster):
     platform = "facebook"
 
     def __init__(self):
-        session_path = Path(os.getenv(
-            "FACEBOOK_SESSION_PATH",
-            r"C:\Users\lenovo\.config\webxes\facebook_session"))
+        session_path = Path(FACEBOOK_SESSION_PATH) if FACEBOOK_SESSION_PATH else Path.home() / ".config" / "webxes" / "facebook_session"
         super().__init__(session_path)
 
     def _navigate_and_verify_login(self):
@@ -173,9 +165,7 @@ class InstagramPoster(BaseSocialPoster):
     platform = "instagram"
 
     def __init__(self):
-        session_path = Path(os.getenv(
-            "INSTAGRAM_SESSION_PATH",
-            r"C:\Users\lenovo\.config\webxes\instagram_session"))
+        session_path = Path(INSTAGRAM_SESSION_PATH) if INSTAGRAM_SESSION_PATH else Path.home() / ".config" / "webxes" / "instagram_session"
         super().__init__(session_path)
 
     def _navigate_and_verify_login(self):
@@ -258,9 +248,7 @@ class TwitterPoster(BaseSocialPoster):
     platform = "twitter"
 
     def __init__(self):
-        session_path = Path(os.getenv(
-            "TWITTER_SESSION_PATH",
-            r"C:\Users\lenovo\.config\webxes\twitter_session"))
+        session_path = Path(TWITTER_SESSION_PATH) if TWITTER_SESSION_PATH else Path.home() / ".config" / "webxes" / "twitter_session"
         super().__init__(session_path)
 
     def _navigate_and_verify_login(self):

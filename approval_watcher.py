@@ -1,5 +1,4 @@
 # approval_watcher.py - Monitors Approved/ and Rejected/ folders
-import os
 import sys
 import time
 import json
@@ -9,14 +8,15 @@ import subprocess
 import threading
 from pathlib import Path
 from datetime import datetime
-from dotenv import load_dotenv
-
-load_dotenv()
-
-VAULT_PATH = Path(os.getenv('VAULT_PATH', r'F:\AI_Employee_Vault'))
-DRY_RUN = os.getenv('DRY_RUN', 'true').lower() == 'true'
+from config import VAULT_PATH, DRY_RUN, IS_CLOUD
 
 logger = logging.getLogger('ApprovalWatcher')
+
+# Guard: approval_watcher must only run locally (it sends emails, posts to social media)
+if IS_CLOUD:
+    print("ERROR: approval_watcher.py must not run on cloud. "
+          "Cloud zone handles drafts only. Exiting.")
+    sys.exit(1)
 
 DOMAINS = ['email', 'payments', 'social_media']
 

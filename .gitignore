@@ -23,6 +23,14 @@ venv/
 # Node
 node_modules/
 
+# Platinum tier — work-zone transient directories
+In_Progress/
+Updates/
+Signals/
+
 # Obsidian internals (optional - keep if you want settings synced)
 # .obsidian/workspace.json
 # .obsidian/workspace-mobile.json
+
+# Cloud setup secrets
+cloud_setup/.env.cloud

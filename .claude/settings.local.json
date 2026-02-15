@@ -29,7 +29,9 @@
       "Bash(dir /b \"F:\\\\AI_Employee_Vault\\\\Rejected\")",
       "Bash(dir /b \"F:\\\\AI_Employee_Vault\\\\.claude\\\\skills\")",
       "Bash(dir:*)",
-      "Bash(find:*)"
+      "Bash(find:*)",
+      "Bash(test:*)",
+      "Bash(grep:*)"
     ]
   }
 }

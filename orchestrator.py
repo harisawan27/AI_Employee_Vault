@@ -18,15 +18,9 @@ from datetime import datetime
 from pathlib import Path
 
 import schedule
-from dotenv import load_dotenv
+from config import VAULT_PATH, NEEDS_ACTION, PLANS, LOGS
 
-VAULT_ROOT = Path(__file__).resolve().parent
-load_dotenv(VAULT_ROOT / ".env")
-
-# Paths
-NEEDS_ACTION = VAULT_ROOT / "Needs_Action"
-PLANS = VAULT_ROOT / "Plans"
-LOGS = VAULT_ROOT / "Logs"
+VAULT_ROOT = VAULT_PATH
 RALPH_STATE = VAULT_ROOT / ".claude" / "ralph_state.json"
 
 from audit_logger import audit_log

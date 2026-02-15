@@ -5,19 +5,14 @@ import os
 import sys
 import logging
 from pathlib import Path
-from dotenv import load_dotenv
 from google.oauth2.credentials import Credentials
 from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
 from gmail_watcher import GmailWatcher
+from config import VAULT_PATH, GMAIL_CREDENTIALS_PATH, GMAIL_TOKEN_PATH
 
-# Load environment variables
-load_dotenv()
-
-# Configuration from .env
-VAULT_PATH = os.getenv('VAULT_PATH', r'F:\AI_Employee_Vault')
-CREDENTIALS_PATH = os.getenv('GMAIL_CREDENTIALS_PATH')
-TOKEN_PATH = os.getenv('GMAIL_TOKEN_PATH')
+CREDENTIALS_PATH = GMAIL_CREDENTIALS_PATH
+TOKEN_PATH = GMAIL_TOKEN_PATH
 
 # Gmail API scope - read-only for Bronze tier
 SCOPES = ['https://www.googleapis.com/auth/gmail.readonly']
@@ -28,7 +23,7 @@ logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
     handlers=[
         logging.StreamHandler(sys.stdout),
-        logging.FileHandler(Path(VAULT_PATH) / 'Logs' / 'gmail_watcher.log')
+        logging.FileHandler(VAULT_PATH / 'Logs' / 'gmail_watcher.log')
     ]
 )
 logger = logging.getLogger('GmailWatcherRunner')
@@ -78,7 +73,7 @@ def main():
     logger.info(f'DRY_RUN: {os.getenv("DRY_RUN", "true")}')
 
     # Ensure Needs_Action folder exists
-    needs_action = Path(VAULT_PATH) / 'Needs_Action'
+    needs_action = VAULT_PATH / 'Needs_Action'
     needs_action.mkdir(exist_ok=True)
 
     # Authenticate (first run opens browser, later runs use saved token)

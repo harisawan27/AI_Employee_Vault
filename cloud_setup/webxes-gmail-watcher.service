@@ -1,0 +1,18 @@
+[Unit]
+Description=WEBXES Tech Gmail Watcher
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/opt/ai_employee_vault
+ExecStart=/usr/bin/python3 run_gmail_watcher.py
+Restart=on-failure
+RestartSec=30
+EnvironmentFile=/opt/ai_employee_vault/.env
+StandardOutput=append:/opt/ai_employee_vault/Logs/gmail_watcher_systemd.log
+StandardError=append:/opt/ai_employee_vault/Logs/gmail_watcher_systemd.log
+
+[Install]
+WantedBy=multi-user.target

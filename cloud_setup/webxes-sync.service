@@ -1,0 +1,18 @@
+[Unit]
+Description=WEBXES Tech Git Vault Sync (Cloud)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/opt/ai_employee_vault
+ExecStart=/usr/bin/python3 cloud_setup/git_sync_cloud.py
+Restart=on-failure
+RestartSec=60
+EnvironmentFile=/opt/ai_employee_vault/.env
+StandardOutput=append:/opt/ai_employee_vault/Logs/sync_systemd.log
+StandardError=append:/opt/ai_employee_vault/Logs/sync_systemd.log
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,59 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15
+    container_name: odoo_fte_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: odoo
+      POSTGRES_PASSWORD: ${ODOO_DB_PASSWORD:-odoo_secure_password}
+    volumes:
+      - odoo_db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U odoo"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    networks:
+      - odoo_net
+
+  web:
+    image: odoo:19.0
+    container_name: odoo_fte_web
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      HOST: db
+      USER: odoo
+      PASSWORD: ${ODOO_DB_PASSWORD:-odoo_secure_password}
+    ports:
+      # Bind to localhost only — Nginx reverse proxy handles external access
+      - "127.0.0.1:8069:8069"
+      - "127.0.0.1:8072:8072"
+    volumes:
+      - odoo_web_data:/var/lib/odoo
+      - odoo_addons:/mnt/extra-addons
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8069/web/health"]
+      interval: 60s
+      timeout: 10s
+      retries: 3
+      start_period: 120s
+    networks:
+      - odoo_net
+
+volumes:
+  odoo_db_data:
+    driver: local
+  odoo_web_data:
+    driver: local
+  odoo_addons:
+    driver: local
+
+networks:
+  odoo_net:
+    driver: bridge

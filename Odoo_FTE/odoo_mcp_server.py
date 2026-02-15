@@ -13,7 +13,6 @@ Usage:
 
 import datetime
 import json
-import os
 import sys
 import xmlrpc.client
 from pathlib import Path
@@ -22,16 +21,8 @@ from pathlib import Path
 VAULT_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(VAULT_ROOT))
 
-from dotenv import load_dotenv
-load_dotenv(VAULT_ROOT / ".env")
-
+from config import ODOO_URL, ODOO_DB, ODOO_USER, ODOO_PASSWORD
 from retry_handler import retry, CircuitBreaker
-
-# Odoo config
-ODOO_URL = os.getenv("ODOO_URL", "http://localhost:8069")
-ODOO_DB = os.getenv("ODOO_DB", "odoo_fte")
-ODOO_USER = os.getenv("ODOO_USER", "admin")
-ODOO_PASSWORD = os.getenv("ODOO_PASSWORD", "admin")
 
 # Circuit breaker for Odoo
 odoo_cb = CircuitBreaker("odoo", failure_threshold=5, recovery_timeout=300)

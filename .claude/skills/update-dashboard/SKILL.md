@@ -10,11 +10,12 @@ Refresh `Dashboard.md` with the current vault state.
 
 ## Process
 
-1. **Scan `/Needs_Action/`** — Count and list pending items by type
-2. **Scan `/Pending_Approval/`** — List items awaiting CEO decision with expiry times
-3. **Scan `/Done/`** — Get the 10 most recent completed items (by file modification time)
-4. **Read current `Dashboard.md`** to preserve structure
-5. **Update each section** with fresh data
+1. **Merge `/Updates/` from cloud** — Move any cloud-generated drafts to `/Needs_Action/` for processing
+2. **Scan `/Needs_Action/`** — Count and list pending items by type
+3. **Scan `/Pending_Approval/`** — List items awaiting CEO decision with expiry times
+4. **Scan `/Done/`** — Get the 10 most recent completed items (by file modification time)
+5. **Read current `Dashboard.md`** to preserve structure
+6. **Update each section** with fresh data
 
 ## Sections to Update
 
@@ -23,6 +24,8 @@ Check which components are deployed:
 - AI Employee: Running / Stopped
 - Gmail Watcher: Check if `gmail_watcher.log` has recent entries
 - Orchestrator: Check if `orchestrator.log` has recent entries
+- Cloud Sync: Check if `git_sync.log` has recent entries (Platinum tier)
+- Cloud Agent: Check if `cloud_agent.log` has recent entries (Platinum tier)
 
 ### Pending Actions
 List all files in `/Needs_Action/` with:

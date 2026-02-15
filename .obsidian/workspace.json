@@ -11,10 +11,14 @@
             "id": "0a908198aa5e5299",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Dashboard.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "Dashboard"
             }
           }
         ]
@@ -177,7 +181,7 @@
       "bases:Create new base": false
     }
   },
-  "active": "0dc7fb9236857f1d",
+  "active": "0a908198aa5e5299",
   "lastOpenFiles": [
     "approval_watcher.py.tmp.7640.1770986161299",
     "approval_watcher.py.tmp.7640.1770986142100",
