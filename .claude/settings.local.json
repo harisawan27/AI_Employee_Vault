@@ -31,7 +31,8 @@
       "Bash(dir:*)",
       "Bash(find:*)",
       "Bash(test:*)",
-      "Bash(grep:*)"
+      "Bash(grep:*)",
+      "Bash(ls:*)"
     ]
   }
 }

@@ -15,6 +15,7 @@ SERVICES=(
     webxes-cloud-agent
     webxes-sync
     webxes-health-monitor
+    webxes-api
 )
 
 echo "=== Installing WEBXES Tech systemd services ==="

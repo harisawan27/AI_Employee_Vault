@@ -1,0 +1,26 @@
+[Unit]
+Description=WEBXES Tech Dashboard API
+After=network.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=webxes
+Group=webxes
+WorkingDirectory=/opt/ai_employee_vault
+EnvironmentFile=/opt/ai_employee_vault/.env
+ExecStart=/usr/bin/python3 -m uvicorn api.main:app --host 127.0.0.1 --port 5000
+Restart=on-failure
+RestartSec=10
+StandardOutput=append:/opt/ai_employee_vault/Logs/api.log
+StandardError=append:/opt/ai_employee_vault/Logs/api.log
+
+# Security hardening
+NoNewPrivileges=true
+ProtectSystem=strict
+ReadWritePaths=/opt/ai_employee_vault
+ProtectHome=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

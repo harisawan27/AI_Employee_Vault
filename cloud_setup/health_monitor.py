@@ -42,6 +42,7 @@ SYSTEMD_SERVICES = [
     "webxes-orchestrator",
     "webxes-cloud-agent",
     "webxes-sync",
+    "webxes-api",
 ]
 
 DOCKER_CONTAINERS = [
