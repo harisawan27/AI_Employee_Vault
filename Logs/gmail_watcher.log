@@ -28,3 +28,156 @@
 2026-02-13 16:16:54,235 - GmailWatcherRunner - INFO - Gmail Watcher is now running. Polling every 120 seconds.
 2026-02-13 16:16:54,235 - GmailWatcherRunner - INFO - Press Ctrl+C to stop.
 2026-02-13 16:16:54,236 - GmailWatcher - INFO - Starting GmailWatcher
+Starting WEBXES Gmail Watcher Loop...
+Found 20 new emails! Processing...
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c6b8018eb09d5c.md
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c6b62dd0590c50.md
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c6b5bc2d3b51a7.md
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c6b4e4a99b07e9.md
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c6b4b08fc3d9eb.md
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c6a7132f3e3ce4.md
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c6a438b5ae1fc3.md
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c6a04f6d00938e.md
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c6955d9dd08428.md
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c68bbdd3fc5c81.md
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c6858270d5e42c.md
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c68393fdd26275.md
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c67c9ae6c0c198.md
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c6771981f441f9.md
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c676b42176872f.md
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c6765dc90cbfd1.md
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c66f7abf8c3794.md
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c66a89f93b8a39.md
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c669fa85612f25.md
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c669643d245c98.md
+Found 1 new emails! Processing...
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c6bbc18c65fc3f.md
+Found 1 new emails! Processing...
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c6bc3615ad0925.md
+Found 1 new emails! Processing...
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c6bf0e5df7934e.md
+Starting WEBXES Gmail Watcher Loop...
+Found 19 new emails! Processing...
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c6bf0e5df7934e.md
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c6bc3615ad0925.md
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c6bbc18c65fc3f.md
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c6b8018eb09d5c.md
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c6b62dd0590c50.md
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c6b5bc2d3b51a7.md
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c6b4e4a99b07e9.md
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c6b4b08fc3d9eb.md
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c6a7132f3e3ce4.md
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c6a438b5ae1fc3.md
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c6a04f6d00938e.md
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c6955d9dd08428.md
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c68bbdd3fc5c81.md
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c6858270d5e42c.md
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c68393fdd26275.md
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c67c9ae6c0c198.md
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c6771981f441f9.md
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c676b42176872f.md
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c6765dc90cbfd1.md
+Found 1 new emails! Processing...
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c6c2b0efc80cf3.md
+Starting WEBXES Gmail Watcher Loop...
+Found 20 new emails! Processing...
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c6c2b0efc80cf3.md
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c6bf0e5df7934e.md
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c6bc3615ad0925.md
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c6bbc18c65fc3f.md
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c6b8018eb09d5c.md
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c6b62dd0590c50.md
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c6b5bc2d3b51a7.md
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c6b4e4a99b07e9.md
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c6b4b08fc3d9eb.md
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c6a7132f3e3ce4.md
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c6a438b5ae1fc3.md
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c6a04f6d00938e.md
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c6955d9dd08428.md
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c68bbdd3fc5c81.md
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c6858270d5e42c.md
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c68393fdd26275.md
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c67c9ae6c0c198.md
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c6771981f441f9.md
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c676b42176872f.md
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c6765dc90cbfd1.md
+Starting WEBXES Gmail Watcher Loop...
+Found 20 new emails! Processing...
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c6c2b0efc80cf3.md
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c6bf0e5df7934e.md
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c6bc3615ad0925.md
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c6bbc18c65fc3f.md
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c6b8018eb09d5c.md
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c6b62dd0590c50.md
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c6b5bc2d3b51a7.md
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c6b4e4a99b07e9.md
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c6b4b08fc3d9eb.md
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c6a7132f3e3ce4.md
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c6a438b5ae1fc3.md
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c6a04f6d00938e.md
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c6955d9dd08428.md
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c68bbdd3fc5c81.md
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c6858270d5e42c.md
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c68393fdd26275.md
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c67c9ae6c0c198.md
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c6771981f441f9.md
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c676b42176872f.md
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c6765dc90cbfd1.md
+Found 1 new emails! Processing...
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c6c72cdef2ed7d.md
+Found 1 new emails! Processing...
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c6c90242aabdff.md
+Found 1 new emails! Processing...
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c6d05e6899d68c.md
+Found 1 new emails! Processing...
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c6e581d5c423c0.md
+Found 1 new emails! Processing...
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c6e86ca8e7cf82.md
+Found 1 new emails! Processing...
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c6ebd5eb228d61.md
+Found 1 new emails! Processing...
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c6f2b326c547b8.md
+Found 1 new emails! Processing...
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c6f97409aa4239.md
+Found 1 new emails! Processing...
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c6f9aa379fc023.md
+Found 1 new emails! Processing...
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c7006d0d1d3aed.md
+Found 1 new emails! Processing...
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c70e418e703ea6.md
+Found 1 new emails! Processing...
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c713e2f8c3d760.md
+Found 1 new emails! Processing...
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c71b2ac13485dc.md
+Found 1 new emails! Processing...
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c71be8ebef4d1a.md
+Found 1 new emails! Processing...
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c71d8ac542bbb3.md
+Found 1 new emails! Processing...
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c71e25d186bf6b.md
+Found 1 new emails! Processing...
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c72103d6120ca3.md
+Found 1 new emails! Processing...
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c72206125bc92d.md
+Found 1 new emails! Processing...
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c74516dd366823.md
+Found 1 new emails! Processing...
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c7617e79cc9a4a.md
+Found 1 new emails! Processing...
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c765656f4c5ec6.md
+Found 1 new emails! Processing...
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c7662604d81ad3.md
+Found 1 new emails! Processing...
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c769348ad58f3e.md
+Found 1 new emails! Processing...
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c76e6ea5991e4d.md
+Found 1 new emails! Processing...
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c76e916ec004a9.md
+Found 1 new emails! Processing...
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c76fbcf50cf36a.md
+Found 1 new emails! Processing...
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c7700dbd551b02.md
+Found 1 new emails! Processing...
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c7703062ecbed3.md
+Found 1 new emails! Processing...
+Created action file: /opt/ai_employee_vault/Needs_Action/EMAIL_19c776d5693f090b.md

@@ -2,9 +2,9 @@
 type: email
 from: Hostinger <team@info.hostinger.com>
 subject: Reset your password
-received: 2026-02-10T03:04:57.254703
+received: 2026-02-13T16:16:56.543921
 priority: high
-status: processed
+status: pending
 ---
 
 ## Email Content
