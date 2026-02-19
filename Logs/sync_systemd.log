@@ -20752,3 +20752,9 @@ Traceback (most recent call last):
   File "/opt/ai_employee_vault/config.py", line 15, in <module>
     from dotenv import load_dotenv
 ModuleNotFoundError: No module named 'dotenv'
+Traceback (most recent call last):
+  File "/opt/ai_employee_vault/cloud_setup/git_sync_cloud.py", line 29, in <module>
+    from config import VAULT_PATH, LOGS
+  File "/opt/ai_employee_vault/config.py", line 15, in <module>
+    from dotenv import load_dotenv
+ModuleNotFoundError: No module named 'dotenv'
