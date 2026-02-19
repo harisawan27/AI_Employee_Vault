@@ -62,6 +62,10 @@ export const approveItem = (id: string, note?: string) =>
 export const rejectItem = (id: string, note?: string) =>
   api.post(`/api/approvals/${id}/reject`, { note: note || '' });
 
+// Social Media
+export const generateSocialPost = (message: string) =>
+  api.post('/api/social/generate', { message });
+
 // Audit
 export const getAuditEvents = (params?: Record<string, string | number>) =>
   api.get('/api/audit', { params });

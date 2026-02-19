@@ -1,9 +1,9 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { useQuery, useQueryClient } from '@tanstack/react-query';
 import { getApprovals, getApproval } from '@/lib/api';
-import { FileText, Mail, Share2, CreditCard } from 'lucide-react';
+import { FileText, Mail, Share2, CreditCard, Search, ArrowUpDown } from 'lucide-react';
 import { formatDistanceToNow } from 'date-fns';
 import ApprovalEditor from '@/components/ApprovalEditor';
 
@@ -21,10 +21,14 @@ const domainColors: Record<string, string> = {
   general: 'border-l-gray-400',
 };
 
+type SortOrder = 'newest' | 'oldest';
+
 export default function ApprovalsPage() {
   const [activeDomain, setActiveDomain] = useState('all');
   const [selectedItem, setSelectedItem] = useState<any>(null);
   const [loadingItem, setLoadingItem] = useState<string | null>(null);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [sortOrder, setSortOrder] = useState<SortOrder>('newest');
   const queryClient = useQueryClient();
 
   const { data, isLoading } = useQuery({
@@ -35,6 +39,33 @@ export default function ApprovalsPage() {
       ),
     refetchInterval: 15_000,
   });
+
+  // Count per domain
+  const domainCounts = useMemo(() => {
+    const items = data?.items || [];
+    const counts: Record<string, number> = { all: items.length };
+    items.forEach((item: any) => {
+      counts[item.domain] = (counts[item.domain] || 0) + 1;
+    });
+    return counts;
+  }, [data?.items]);
+
+  // Filter + sort
+  const displayItems = useMemo(() => {
+    let items = data?.items || [];
+    if (searchQuery.trim()) {
+      const q = searchQuery.toLowerCase();
+      items = items.filter(
+        (item: any) =>
+          item.filename?.toLowerCase().includes(q) ||
+          item.preview?.toLowerCase().includes(q)
+      );
+    }
+    if (sortOrder === 'oldest') {
+      items = [...items].reverse();
+    }
+    return items;
+  }, [data?.items, searchQuery, sortOrder]);
 
   const handleCardClick = async (item: any) => {
     setLoadingItem(item.id);
@@ -58,7 +89,7 @@ export default function ApprovalsPage() {
       <h1 className="text-2xl font-bold mb-6">Approval Queue</h1>
 
       {/* Domain tabs */}
-      <div className="flex gap-1 mb-6 bg-gray-100 rounded-lg p-1 w-fit">
+      <div className="flex gap-1 mb-4 bg-gray-100 rounded-lg p-1 w-fit max-w-full overflow-x-auto">
         {domainTabs.map((tab) => (
           <button
             key={tab.key}
@@ -71,8 +102,35 @@ export default function ApprovalsPage() {
           >
             {tab.icon && <tab.icon className="w-4 h-4" />}
             {tab.label}
+            {domainCounts[tab.key] !== undefined && (
+              <span className="text-xs bg-gray-200 text-gray-600 px-1.5 py-0.5 rounded-full ml-1">
+                {domainCounts[tab.key]}
+              </span>
+            )}
           </button>
         ))}
+      </div>
+
+      {/* Search + sort bar */}
+      <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 mb-6">
+        <div className="relative flex-1 sm:max-w-xs">
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
+          <input
+            type="text"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            placeholder="Search approvals..."
+            className="pl-9 pr-3 py-2 border border-gray-200 rounded-lg text-sm w-full focus:ring-2 focus:ring-brand-500 focus:border-transparent outline-none"
+          />
+        </div>
+        <select
+          value={sortOrder}
+          onChange={(e) => setSortOrder(e.target.value as SortOrder)}
+          className="px-3 py-2 border border-gray-200 rounded-lg text-sm"
+        >
+          <option value="newest">Newest first</option>
+          <option value="oldest">Oldest first</option>
+        </select>
       </div>
 
       {/* Loading */}
@@ -83,16 +141,18 @@ export default function ApprovalsPage() {
       )}
 
       {/* Empty state */}
-      {!isLoading && data?.items?.length === 0 && (
+      {!isLoading && displayItems.length === 0 && (
         <div className="text-center py-16">
           <FileText className="w-12 h-12 text-gray-300 mx-auto mb-3" />
-          <p className="text-gray-500">No pending approvals</p>
+          <p className="text-gray-500">
+            {searchQuery ? 'No approvals match your search' : 'No pending approvals'}
+          </p>
         </div>
       )}
 
       {/* Approval cards grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
-        {data?.items?.map((item: any) => (
+        {displayItems.map((item: any) => (
           <button
             key={item.id}
             onClick={() => handleCardClick(item)}

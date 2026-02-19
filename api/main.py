@@ -25,6 +25,7 @@ from api.routers.inbox_router import router as inbox_router
 from api.routers.approval_router import router as approval_router
 from api.routers.audit_router import router as audit_router
 from api.routers.settings_router import router as settings_router
+from api.routers.social_router import router as social_router
 from api.websocket_manager import router as ws_router, start_watcher, stop_watcher
 
 
@@ -63,6 +64,7 @@ app.include_router(inbox_router)
 app.include_router(approval_router)
 app.include_router(audit_router)
 app.include_router(settings_router)
+app.include_router(social_router)
 app.include_router(ws_router)
 
 

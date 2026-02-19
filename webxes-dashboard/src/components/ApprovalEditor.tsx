@@ -22,21 +22,7 @@ export default function ApprovalEditor({ item, onClose, onAction }: ApprovalEdit
   const [acting, setActing] = useState<string | null>(null);
   const [message, setMessage] = useState('');
 
-  // Keyboard shortcuts
-  const handleKeyDown = useCallback(
-    (e: KeyboardEvent) => {
-      if (e.key === 'Escape') onClose();
-      if (e.ctrlKey && e.key === 'Enter') handleApprove();
-    },
-    [content]
-  );
-
-  useEffect(() => {
-    document.addEventListener('keydown', handleKeyDown);
-    return () => document.removeEventListener('keydown', handleKeyDown);
-  }, [handleKeyDown]);
-
-  const handleSave = async () => {
+  const handleSave = useCallback(async () => {
     setSaving(true);
     try {
       await updateApprovalContent(item.id, content);
@@ -47,9 +33,9 @@ export default function ApprovalEditor({ item, onClose, onAction }: ApprovalEdit
     } finally {
       setSaving(false);
     }
-  };
+  }, [item.id, content]);
 
-  const handleApprove = async () => {
+  const handleApprove = useCallback(async () => {
     setActing('approve');
     try {
       await approveItem(item.id);
@@ -59,7 +45,7 @@ export default function ApprovalEditor({ item, onClose, onAction }: ApprovalEdit
       setMessage('Approve failed');
       setActing(null);
     }
-  };
+  }, [item.id, onAction, onClose]);
 
   const handleReject = async () => {
     setActing('reject');
@@ -73,6 +59,20 @@ export default function ApprovalEditor({ item, onClose, onAction }: ApprovalEdit
     }
   };
 
+  // Keyboard shortcuts
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+      if (e.ctrlKey && e.key === 'Enter') handleApprove();
+      if (e.ctrlKey && e.key === 's') {
+        e.preventDefault();
+        handleSave();
+      }
+    };
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [onClose, handleApprove, handleSave]);
+
   const domainColor = {
     email: 'bg-blue-100 text-blue-700',
     social_media: 'bg-purple-100 text-purple-700',
@@ -83,10 +83,10 @@ export default function ApprovalEditor({ item, onClose, onAction }: ApprovalEdit
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
       <div className="bg-white rounded-2xl shadow-2xl w-full max-w-5xl max-h-[90vh] flex flex-col">
         {/* Header */}
-        <div className="flex items-center justify-between p-4 border-b">
-          <div className="flex items-center gap-3">
-            <h2 className="font-semibold text-lg">{item.filename}</h2>
-            <span className={`text-xs px-2 py-1 rounded-full font-medium ${domainColor}`}>
+        <div className="flex items-center justify-between p-3 sm:p-4 border-b">
+          <div className="flex items-center gap-2 sm:gap-3 min-w-0">
+            <h2 className="font-semibold text-base sm:text-lg truncate">{item.filename}</h2>
+            <span className={`text-xs px-2 py-1 rounded-full font-medium flex-shrink-0 ${domainColor}`}>
               {item.domain}
             </span>
           </div>
@@ -98,7 +98,7 @@ export default function ApprovalEditor({ item, onClose, onAction }: ApprovalEdit
         {/* Content area — split pane */}
         <div className="flex-1 grid grid-cols-1 lg:grid-cols-2 gap-0 overflow-hidden">
           {/* Preview pane */}
-          <div className="p-6 overflow-y-auto border-r border-gray-100">
+          <div className="p-4 sm:p-6 overflow-y-auto border-r border-gray-100">
             <h3 className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-3">Preview</h3>
             {/* Metadata */}
             {Object.entries(item.metadata).length > 0 && (
@@ -118,7 +118,7 @@ export default function ApprovalEditor({ item, onClose, onAction }: ApprovalEdit
           </div>
 
           {/* Editor pane */}
-          <div className="p-6 flex flex-col overflow-hidden">
+          <div className="p-4 sm:p-6 flex flex-col overflow-hidden">
             <h3 className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-3">Edit</h3>
             <textarea
               value={content}
@@ -130,24 +130,33 @@ export default function ApprovalEditor({ item, onClose, onAction }: ApprovalEdit
         </div>
 
         {/* Footer */}
-        <div className="flex items-center justify-between p-4 border-t bg-gray-50 rounded-b-2xl">
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between p-3 sm:p-4 gap-3 border-t bg-gray-50 rounded-b-2xl">
           <div className="text-sm text-gray-500">
             {message && <span className="text-brand-600 font-medium">{message}</span>}
-            {!message && <span>Ctrl+Enter to approve | Esc to close</span>}
+            {!message && (
+              <span className="hidden sm:inline space-x-3">
+                <kbd className="px-1.5 py-0.5 bg-gray-200 rounded text-xs font-mono">Ctrl+S</kbd>
+                <span>Save</span>
+                <kbd className="px-1.5 py-0.5 bg-gray-200 rounded text-xs font-mono ml-2">Ctrl+Enter</kbd>
+                <span>Approve</span>
+                <kbd className="px-1.5 py-0.5 bg-gray-200 rounded text-xs font-mono ml-2">Esc</kbd>
+                <span>Close</span>
+              </span>
+            )}
           </div>
           <div className="flex items-center gap-2">
             <button
               onClick={handleSave}
               disabled={saving}
-              className="flex items-center gap-2 px-4 py-2 text-sm border border-gray-300 rounded-lg hover:bg-gray-100 transition disabled:opacity-50"
+              className="flex-1 sm:flex-none flex items-center justify-center gap-2 px-3 sm:px-4 py-2 text-sm border border-gray-300 rounded-lg hover:bg-gray-100 transition disabled:opacity-50"
             >
               <Save className="w-4 h-4" />
-              {saving ? 'Saving...' : 'Save Draft'}
+              {saving ? 'Saving...' : 'Save'}
             </button>
             <button
               onClick={handleReject}
               disabled={acting !== null}
-              className="flex items-center gap-2 px-4 py-2 text-sm bg-red-500 text-white rounded-lg hover:bg-red-600 transition disabled:opacity-50"
+              className="flex-1 sm:flex-none flex items-center justify-center gap-2 px-3 sm:px-4 py-2 text-sm bg-red-500 text-white rounded-lg hover:bg-red-600 transition disabled:opacity-50"
             >
               <XCircle className="w-4 h-4" />
               {acting === 'reject' ? 'Rejecting...' : 'Reject'}
@@ -155,7 +164,7 @@ export default function ApprovalEditor({ item, onClose, onAction }: ApprovalEdit
             <button
               onClick={handleApprove}
               disabled={acting !== null}
-              className="flex items-center gap-2 px-4 py-2 text-sm bg-green-500 text-white rounded-lg hover:bg-green-600 transition disabled:opacity-50"
+              className="flex-1 sm:flex-none flex items-center justify-center gap-2 px-3 sm:px-4 py-2 text-sm bg-green-500 text-white rounded-lg hover:bg-green-600 transition disabled:opacity-50"
             >
               <Check className="w-4 h-4" />
               {acting === 'approve' ? 'Approving...' : 'Approve'}

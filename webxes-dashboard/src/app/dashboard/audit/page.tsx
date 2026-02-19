@@ -44,7 +44,7 @@ export default function AuditPage() {
             value={search}
             onChange={(e) => { setSearch(e.target.value); setPage(1); }}
             placeholder="Search events..."
-            className="pl-9 pr-4 py-2 border border-gray-200 rounded-lg text-sm w-64"
+            className="pl-9 pr-4 py-2 border border-gray-200 rounded-lg text-sm w-full sm:w-64"
           />
         </div>
         <select
@@ -83,10 +83,11 @@ export default function AuditPage() {
         </div>
       )}
 
-      {/* Table */}
+      {/* Table (desktop) / Cards (mobile) */}
       {data?.events?.length > 0 && (
         <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
-          <div className="overflow-x-auto">
+          {/* Desktop table */}
+          <div className="hidden sm:block overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
                 <tr className="bg-gray-50 text-left">
@@ -127,9 +128,33 @@ export default function AuditPage() {
             </table>
           </div>
 
+          {/* Mobile card list */}
+          <div className="sm:hidden divide-y divide-gray-100">
+            {data.events.map((event: any, i: number) => (
+              <div key={i} className="p-4 space-y-1.5">
+                <div className="flex items-center justify-between">
+                  <span className="px-2 py-0.5 rounded-full bg-gray-100 text-gray-700 text-xs">
+                    {event.category}
+                  </span>
+                  <span className={`px-2 py-0.5 rounded-full text-xs font-medium ${
+                    statusColors[event.status] || 'bg-gray-100 text-gray-600'
+                  }`}>
+                    {event.status}
+                  </span>
+                </div>
+                <p className="text-sm text-gray-900">{event.action}</p>
+                <p className="text-xs text-gray-400">
+                  {event.timestamp
+                    ? format(new Date(event.timestamp), 'MMM d, HH:mm:ss')
+                    : '-'}
+                </p>
+              </div>
+            ))}
+          </div>
+
           {/* Pagination */}
           {data.pages > 1 && (
-            <div className="flex items-center justify-between px-4 py-3 border-t border-gray-100">
+            <div className="flex flex-col sm:flex-row items-center justify-between px-4 py-3 gap-2 border-t border-gray-100">
               <span className="text-sm text-gray-500">
                 Page {data.page} of {data.pages} ({data.total} events)
               </span>
