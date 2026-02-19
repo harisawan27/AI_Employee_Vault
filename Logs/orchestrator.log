@@ -75260,3 +75260,31 @@ Traceback (most recent call last):
   File "/opt/ai_employee_vault/orchestrator.py", line 11, in <module>
     import anthropic
 ModuleNotFoundError: No module named 'anthropic'
+Traceback (most recent call last):
+  File "/opt/ai_employee_vault/orchestrator.py", line 11, in <module>
+    import anthropic
+ModuleNotFoundError: No module named 'anthropic'
+Traceback (most recent call last):
+  File "/opt/ai_employee_vault/orchestrator.py", line 11, in <module>
+    import anthropic
+ModuleNotFoundError: No module named 'anthropic'
+Traceback (most recent call last):
+  File "/opt/ai_employee_vault/orchestrator.py", line 11, in <module>
+    import anthropic
+ModuleNotFoundError: No module named 'anthropic'
+Traceback (most recent call last):
+  File "/opt/ai_employee_vault/orchestrator.py", line 11, in <module>
+    import anthropic
+ModuleNotFoundError: No module named 'anthropic'
+Traceback (most recent call last):
+  File "/opt/ai_employee_vault/orchestrator.py", line 11, in <module>
+    import anthropic
+ModuleNotFoundError: No module named 'anthropic'
+Traceback (most recent call last):
+  File "/opt/ai_employee_vault/orchestrator.py", line 11, in <module>
+    import anthropic
+ModuleNotFoundError: No module named 'anthropic'
+Traceback (most recent call last):
+  File "/opt/ai_employee_vault/orchestrator.py", line 11, in <module>
+    import anthropic
+ModuleNotFoundError: No module named 'anthropic'
