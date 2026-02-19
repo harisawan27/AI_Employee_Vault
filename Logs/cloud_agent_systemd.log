@@ -41152,3 +41152,21 @@ Traceback (most recent call last):
   File "/opt/ai_employee_vault/config.py", line 15, in <module>
     from dotenv import load_dotenv
 ModuleNotFoundError: No module named 'dotenv'
+Traceback (most recent call last):
+  File "/opt/ai_employee_vault/cloud_agent.py", line 21, in <module>
+    from config import (
+  File "/opt/ai_employee_vault/config.py", line 15, in <module>
+    from dotenv import load_dotenv
+ModuleNotFoundError: No module named 'dotenv'
+Traceback (most recent call last):
+  File "/opt/ai_employee_vault/cloud_agent.py", line 21, in <module>
+    from config import (
+  File "/opt/ai_employee_vault/config.py", line 15, in <module>
+    from dotenv import load_dotenv
+ModuleNotFoundError: No module named 'dotenv'
+Traceback (most recent call last):
+  File "/opt/ai_employee_vault/cloud_agent.py", line 21, in <module>
+    from config import (
+  File "/opt/ai_employee_vault/config.py", line 15, in <module>
+    from dotenv import load_dotenv
+ModuleNotFoundError: No module named 'dotenv'
