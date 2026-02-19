@@ -20800,3 +20800,15 @@ Traceback (most recent call last):
   File "/opt/ai_employee_vault/config.py", line 15, in <module>
     from dotenv import load_dotenv
 ModuleNotFoundError: No module named 'dotenv'
+Traceback (most recent call last):
+  File "/opt/ai_employee_vault/cloud_setup/health_monitor.py", line 25, in <module>
+    from config import VAULT_PATH, LOGS, SIGNALS, ensure_dirs
+  File "/opt/ai_employee_vault/config.py", line 15, in <module>
+    from dotenv import load_dotenv
+ModuleNotFoundError: No module named 'dotenv'
+Traceback (most recent call last):
+  File "/opt/ai_employee_vault/cloud_setup/health_monitor.py", line 25, in <module>
+    from config import VAULT_PATH, LOGS, SIGNALS, ensure_dirs
+  File "/opt/ai_employee_vault/config.py", line 15, in <module>
+    from dotenv import load_dotenv
+ModuleNotFoundError: No module named 'dotenv'

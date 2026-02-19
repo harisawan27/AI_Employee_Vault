@@ -34,3 +34,4 @@ Signals/
 
 # Cloud setup secrets
 cloud_setup/.env.cloud
+Logs/
