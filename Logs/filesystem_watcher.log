@@ -1,7 +1,0 @@
-2026-02-13 16:39:24,368 - FileSystemWatcherRunner - INFO - === WEBXES Tech File System Watcher Starting ===
-2026-02-13 16:39:24,368 - FileSystemWatcherRunner - INFO - Vault: F:\AI_Employee_Vault
-2026-02-13 16:39:24,369 - FileSystemWatcherRunner - INFO - Monitoring: F:\AI_Employee_Vault/Inbox/
-2026-02-13 16:39:24,372 - FileSystemWatcher - INFO - Watching F:\AI_Employee_Vault\Inbox for new files
-2026-02-13 16:39:24,372 - FileSystemWatcherRunner - INFO - File System Watcher is now running. Press Ctrl+C to stop.
-2026-02-13 16:39:24,372 - FileSystemWatcher - INFO - Starting FileSystemWatcher
-2026-02-13 16:39:34,374 - FileSystemWatcher - INFO - Created action file: FILE_test_invoice_acme_20260213_163934.md for test_invoice_acme.txt
