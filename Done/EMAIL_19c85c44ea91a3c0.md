@@ -1,0 +1,16 @@
+---
+type: email
+from: Najeebullah on Facebook <close_friend_updates@facebookmail.com>
+subject: 💬 Najeebullah Bhanbhro commented on her post
+received: 2026-02-22T14:33:05.800726
+priority: high
+status: pending
+---
+
+## Email Content
+‎&quot;دعا حدیث الکساء&quot; اصغریہ اسٹوڈنٹس...‎ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌
+
+## Suggested Actions
+- [ ] Reply to sender
+- [ ] Forward to relevant party
+- [ ] Archive after processing
